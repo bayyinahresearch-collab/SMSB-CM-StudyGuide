@@ -138,15 +138,18 @@
   footer{border-top:2px solid var(--ink);margin-top:40px;padding:20px 0 50px;
     font-size:12.5px;color:var(--ink-soft)}
   footer b{color:var(--ink)}
-  .credit-line{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:12px}
-  .credit-line a{color:var(--green);text-decoration:none;font-weight:600}
-  .credit-line a:hover{text-decoration:underline}
-  .credit-note{font-size:12px;margin-top:6px}
-  .credit-note a{color:var(--green);text-decoration:none;font-weight:600}
-  .credit-note a:hover{text-decoration:underline}
-  .top-credit{margin:14px 0 0;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:9px}
-  .top-credit .credit-line{margin-top:0;padding-top:0;border-top:none;color:var(--ink-soft)}
-  .top-credit .credit-note{color:var(--ink-soft)}
+  .side-credit{position:absolute;top:50%;transform:translateY(-50%);width:250px;
+    font-size:11px;line-height:1.45;color:var(--ink-soft);margin:0;z-index:21}
+  .side-credit a{color:var(--green);text-decoration:none;font-weight:600}
+  .side-credit a:hover{text-decoration:underline}
+  .side-credit-left{left:24px;text-align:left}
+  .side-credit-right{right:24px;text-align:right}
+  @media(max-width:1400px){.side-credit{display:none}}
+  .foot-credit{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+  .foot-credit .credit-line{margin:0 0 6px;text-align:left;font-size:12px;color:var(--ink-soft)}
+  .foot-credit .credit-note{margin:0;text-align:left;font-size:12px;color:var(--ink-soft)}
+  .foot-credit .credit-line a,.foot-credit .credit-note a{color:var(--green);text-decoration:none;font-weight:600}
+  .foot-credit .credit-line a:hover,.foot-credit .credit-note a:hover{text-decoration:underline}
   .disc{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:12px 14px;
     font-size:12.5px;color:var(--ink-soft);margin:16px 0}
   @media(max-width:560px){
@@ -171,13 +174,8 @@
 <body>
 <header class="masthead">
   <div class="wrap">
-    <div class="kicker">University of Khartoum · Master of Community Medicine</div>
     <h1 class="title">The Butter of <em>Community Medicine</em></h1>
     <p class="sub">A structured, high-yield exam companion built from the MCM question bank — <b>verbatim questions, worked answers, and distractor analysis</b>, grouped into five modules and anchored to Sudan's current public-health priorities.</p>
-    <div class="top-credit">
-      <p class="credit-line">Organized, designed, and answer-explained by <b>Bayyinah Health Research Advisory</b> (<a href="https://bayyinahresearch.com" target="_blank" rel="noopener">bayyinahresearch.com</a>), based on the original University of Khartoum MCM question bank, <i>"The Butter of Butter."</i></p>
-      <p class="credit-note">Spotted an error, or have feedback, corrections, or new recall questions to contribute? Reach us at <a href="mailto:info@bayyinahresearch.com">info@bayyinahresearch.com</a>.</p>
-    </div>
     <div class="meter">
       <div class="ring" id="ring"><span id="ringPct">0%</span></div>
       <div class="lbl"><b id="revCount">0</b> of <b id="totCount">0</b> questions marked reviewed · <span id="modCount"></span></div>
@@ -186,6 +184,8 @@
 </header>
 
 <div class="toolbar">
+  <p class="side-credit side-credit-left">Organized, designed, and answer-explained by <b>Bayyinah Health Research Advisory</b> (<a href="https://bayyinahresearch.com" target="_blank" rel="noopener">bayyinahresearch.com</a>), based on the original University of Khartoum MCM question bank, <i>"The Butter of Butter."</i></p>
+  <p class="side-credit side-credit-right">Spotted an error, or have feedback, corrections, or new recall questions to contribute? Reach us at <a href="mailto:info@bayyinahresearch.com">info@bayyinahresearch.com</a>.</p>
   <div class="wrap">
     <label class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -279,8 +279,10 @@
 
 <footer><div class="wrap">
   <b>The Butter of Community Medicine</b> — a complete MCM exam companion covering Epidemiology &amp; Biostatistics, Communicable Diseases, Non-Communicable Diseases, Maternal &amp; Child Health, Environmental Health, and Clinical/Other topics, capped by the <i>High-Yield Topics for Sudan's Current Health Situation</i> synthesis report. Progress is saved on this device.
-  <p class="credit-line">Organized, designed, and answer-explained by <b>Bayyinah Health Research Advisory</b> (<a href="https://bayyinahresearch.com" target="_blank" rel="noopener">bayyinahresearch.com</a>), based on the original University of Khartoum MCM question bank, <i>"The Butter of Butter."</i></p>
-  <p class="credit-note">Spotted an error, or have feedback, corrections, or new recall questions to contribute? Reach us at <a href="mailto:info@bayyinahresearch.com">info@bayyinahresearch.com</a>.</p>
+  <div class="foot-credit">
+    <p class="credit-line">Organized, designed, and answer-explained by <b>Bayyinah Health Research Advisory</b> (<a href="https://bayyinahresearch.com" target="_blank" rel="noopener">bayyinahresearch.com</a>), based on the original University of Khartoum MCM question bank, <i>"The Butter of Butter."</i></p>
+    <p class="credit-note">Spotted an error, or have feedback, corrections, or new recall questions to contribute? Reach us at <a href="mailto:info@bayyinahresearch.com">info@bayyinahresearch.com</a>.</p>
+  </div>
 </div></footer>
 
 <script>
